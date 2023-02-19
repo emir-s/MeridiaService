@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1704.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeridiaService", "MeridiaService\MeridiaService.csproj", "{0D3FB0DD-B912-408B-8B4A-BBC0F6D6D904}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D3FB0DD-B912-408B-8B4A-BBC0F6D6D904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D3FB0DD-B912-408B-8B4A-BBC0F6D6D904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D3FB0DD-B912-408B-8B4A-BBC0F6D6D904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D3FB0DD-B912-408B-8B4A-BBC0F6D6D904}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21B29048-0D4B-44DF-A86A-9D1547A0ACE2}
+	EndGlobalSection
+EndGlobal
