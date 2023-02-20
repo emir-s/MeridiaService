@@ -7,6 +7,7 @@ namespace Meridia.Application.Interfaces
 	public interface IUserService
 	{
         Task<CreateUserResponse> CreateUser(CreateUserRequest req);
+        Task<ValidateUserResponse> ValidateUser(ValidateUserRequest req);
     }
 }
 

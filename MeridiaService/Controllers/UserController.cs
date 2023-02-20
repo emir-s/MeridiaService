@@ -27,6 +27,13 @@ namespace MeridiaService.Controllers
             var result = await _userService.CreateUser(user);
             return Ok(result);
         }
+
+        [HttpPost]
+        public async Task<ActionResult<ValidateUserResponse>> ValidateUser(ValidateUserRequest user)
+        {
+            var result = await _userService.ValidateUser(user);
+            return Ok(result);
+        }
     }
 }
 
