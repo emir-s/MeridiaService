@@ -1,4 +1,8 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using System.Diagnostics;
+using Meridia.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+
+var builder = WebApplication.CreateBuilder(args);
 
 var appSettings = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
@@ -33,5 +37,6 @@ using (var scope = app.Services.CreateScope())
 {
     Meridia.Infrastructure.DependencyResolver.DependencyResolverService.MigrateDatabase(scope.ServiceProvider);
 }
+
 app.Run();
 

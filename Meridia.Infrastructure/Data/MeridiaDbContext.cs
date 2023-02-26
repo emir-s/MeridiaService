@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Security.AccessControl;
 using Meridia.Domain.Entities.Common;
+using Meridia.Domain.Entities.Locations;
 using Meridia.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,12 +10,27 @@ namespace Meridia.Infrastructure.Data
 {
     public class MeridiaDbContext : DbContext
     {
-        public MeridiaDbContext(DbContextOptions options) : base(options)
+        public MeridiaDbContext(DbContextOptions<MeridiaDbContext> options) : base(options)
         {
         }
 
         public DbSet<Users> Users { get; set; }
-
+        public DbSet<City> City { get; set; }
+        public DbSet<District> District { get; set; }
+        public DbSet<Address> Address { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<City>()
+                .HasMany(c => c.Districts)
+                .WithOne(o => o.City)
+                .HasForeignKey(o => o.CityID);
+            
+            modelBuilder.Entity<District>()
+                .HasMany(c => c.Addresses)
+                .WithOne(o => o.District)
+                .HasForeignKey(o => o.DistrictID);
+            
+        }
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             var insertedEntries = this.ChangeTracker.Entries()
@@ -27,7 +43,7 @@ namespace Meridia.Infrastructure.Data
                 //If the inserted object is an Auditable. 
                 if (auditableEntity != null)
                 {
-                    auditableEntity.CreatedDate = DateTimeOffset.UtcNow;
+                    auditableEntity.CreatedDate = DateTime.UtcNow;
                 }
             }
 
@@ -41,7 +57,7 @@ namespace Meridia.Infrastructure.Data
                 var auditableEntity = modifiedEntry as BaseEntity;
                 if (auditableEntity != null)
                 {
-                    auditableEntity.LastUpdatedDate = DateTimeOffset.UtcNow;
+                    auditableEntity.LastUpdatedDate = DateTime.UtcNow;
                 }
             }
 

@@ -42,9 +42,8 @@ namespace Meridia.Application.Services
             var user = await _unitOfWork.Repository<Users>().FirstOrDefaultAsync(spec);
             if (user is null)
                 throw new UserNotFoundException();
-            return new ValidateUserResponse() { Email = user.Email, Name = user.Name, Surname = user.Surname, UserID = user.UserID };
-
+            return new ValidateUserResponse()
+                { Email = user.Email, Name = user.Name, Surname = user.Surname, UserID = user.UserID };
         }
     }
 }
-

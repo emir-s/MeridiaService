@@ -16,8 +16,9 @@ namespace Meridia.Infrastructure.DependencyResolver
         public static void Register(IServiceCollection services, IConfiguration Configuration)
         {
             services.AddDbContext<MeridiaDbContext>(options =>
-                options.UseSqlServer(@"Server=localhost,1433;Database=MeridiaDB;User Id=sa;Password=52865286Ee;TrustServerCertificate=True;Encrypt=false;",
-                x => x.MigrationsAssembly("Meridia.Infrastructure")));
+                options.UseSqlServer(
+                    "name=ConnectionStrings:MeridiaDatabase",
+                    x => x.MigrationsAssembly("Meridia.DbMigrations")));
 
             services.AddScoped(typeof(IBaseRepositoryAsync<>), typeof(BaseRepositoryAsync<>));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -34,4 +35,3 @@ namespace Meridia.Infrastructure.DependencyResolver
         }
     }
 }
-
