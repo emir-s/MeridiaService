@@ -1,4 +1,5 @@
 ﻿using System;
+using Meridia.Application.Interfaces;
 using Meridia.Application.Interfaces.Repositories;
 using Meridia.Application.Interfaces.Services;
 using Meridia.Infrastructure.Services;
@@ -15,6 +16,7 @@ namespace Meridia.Infrastructure.DependencyResolver
         {
             services.AddScoped<ILoggerService, LoggerService>();
             services.AddScoped<ICryptService, CryptService>();
+            services.AddScoped<ITokenService, TokenService>();
         }
     }
 }

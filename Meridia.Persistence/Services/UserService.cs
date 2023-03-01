@@ -16,12 +16,14 @@ namespace Meridia.Persistence.Services
         private readonly IUnitOfWork _unitOfWork;
         private readonly ILoggerService _loggerService;
         private readonly ICryptService _cryptService;
+        private readonly ITokenService _tokenService;
 
-        public UserService(IUnitOfWork unitOfWork, ILoggerService loggerService, ICryptService cryptService)
+        public UserService(IUnitOfWork unitOfWork, ILoggerService loggerService, ICryptService cryptService, ITokenService tokenService)
         {
             _unitOfWork = unitOfWork;
             _loggerService = loggerService;
             _cryptService = cryptService;
+            _tokenService = tokenService;
         }
 
         public async Task<CreateUserResponse> CreateUser(CreateUserRequest req)
@@ -47,9 +49,11 @@ namespace Meridia.Persistence.Services
 
             if (!_cryptService.DecryptPassword(req.Password,user.Password))
                 throw new WrongPasswordException();
+
+            var token = _tokenService.CreateAccessToken(900, user);
             
             return new ValidateUserResponse()
-                { Email = user.Email, Name = user.Name, Surname = user.Surname, UserID = user.UserID };
+                { Email = user.Email, Name = user.Name, Surname = user.Surname, UserID = user.UserID, token = token};
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using AutoMapper;
 using Meridia.Application.Interfaces.Repositories;
 using Meridia.Application.Interfaces;
 using Meridia.Infrastructure.Repositories;
