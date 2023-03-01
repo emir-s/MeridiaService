@@ -1,9 +1,10 @@
 ﻿using System;
-using Meridia.Application.Core.Repositories;
+using Meridia.Application.Interfaces.Repositories;
 using Meridia.Domain.Entities.Common;
-using Meridia.Infrastructure.Data;
+using Meridia.Persistence.Data;
+using Meridia.Persistence.Repositories;
 
-namespace Meridia.Infrastructure.Repositories
+namespace Meridia.Persistence.Repositories
 {
 	public class UnitOfWork : IUnitOfWork
 	{

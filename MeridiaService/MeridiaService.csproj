@@ -31,9 +31,9 @@
     <ProjectReference Include="..\Meridia.Application\Meridia.Application.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
-    <ProjectReference Include="..\Meridia.DbMigrations\Meridia.DbMigrations.csproj" />
     <ProjectReference Include="..\Meridia.Infrastructure\Meridia.Infrastructure.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\Meridia.Persistence\Meridia.Persistence.csproj" />
   </ItemGroup>
 </Project>

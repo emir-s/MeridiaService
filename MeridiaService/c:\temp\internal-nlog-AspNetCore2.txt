@@ -86,3 +86,31 @@
 2023-02-21 23:05:24.0304 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
 2023-02-21 23:05:24.0304 Info Closing old configuration.
 2023-02-21 23:05:24.0665 Info Validating config: TargetNames=ownFile-web, ConfigItems=30, FilePath=/Users/emirs/Desktop/Projects/Meridia-BE/MeridiaService/MeridiaService/bin/Debug/net7.0/nlog.config
+2023-03-01 21:29:37.7716 Info Message Template Auto Format enabled
+2023-03-01 21:29:37.7755 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-01 21:29:37.8058 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-03-01 21:29:37.8516 Info Validating config: TargetNames=ownFile-web, ConfigItems=30, FilePath=/Users/emirs/Desktop/Projects/Meridia-BE/MeridiaService/MeridiaService/bin/Debug/net7.0/nlog.config
+2023-03-01 21:30:29.6346 Info Loading NLog config from XML file: /Users/emirs/Desktop/Projects/Meridia-BE/MeridiaService/MeridiaService/bin/Debug/net7.0/nlog.config
+2023-03-01 21:30:29.6358 Info Message Template Auto Format enabled
+2023-03-01 21:30:29.6370 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-01 21:30:29.6414 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-03-01 21:30:29.6418 Info Closing old configuration.
+2023-03-01 21:30:29.6926 Info Validating config: TargetNames=ownFile-web, ConfigItems=30, FilePath=/Users/emirs/Desktop/Projects/Meridia-BE/MeridiaService/MeridiaService/bin/Debug/net7.0/nlog.config
+2023-03-01 21:31:38.6109 Info Loading NLog config from XML file: /Users/emirs/Desktop/Projects/Meridia-BE/MeridiaService/MeridiaService/bin/Debug/net7.0/nlog.config
+2023-03-01 21:31:38.6116 Info Message Template Auto Format enabled
+2023-03-01 21:31:38.6116 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-01 21:31:38.6131 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-03-01 21:31:38.6131 Info Closing old configuration.
+2023-03-01 21:31:38.6548 Info Validating config: TargetNames=ownFile-web, ConfigItems=30, FilePath=/Users/emirs/Desktop/Projects/Meridia-BE/MeridiaService/MeridiaService/bin/Debug/net7.0/nlog.config
+2023-03-01 21:31:54.0666 Info Loading NLog config from XML file: /Users/emirs/Desktop/Projects/Meridia-BE/MeridiaService/MeridiaService/bin/Debug/net7.0/nlog.config
+2023-03-01 21:31:54.0681 Info Message Template Auto Format enabled
+2023-03-01 21:31:54.0681 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-01 21:31:54.0702 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-03-01 21:31:54.0712 Info Closing old configuration.
+2023-03-01 21:31:54.1039 Info Validating config: TargetNames=ownFile-web, ConfigItems=30, FilePath=/Users/emirs/Desktop/Projects/Meridia-BE/MeridiaService/MeridiaService/bin/Debug/net7.0/nlog.config
+2023-03-01 21:32:00.2249 Info Loading NLog config from XML file: /Users/emirs/Desktop/Projects/Meridia-BE/MeridiaService/MeridiaService/bin/Debug/net7.0/nlog.config
+2023-03-01 21:32:00.2258 Info Message Template Auto Format enabled
+2023-03-01 21:32:00.2258 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-01 21:32:00.2284 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-03-01 21:32:00.2290 Info Closing old configuration.
+2023-03-01 21:32:00.2701 Info Validating config: TargetNames=ownFile-web, ConfigItems=30, FilePath=/Users/emirs/Desktop/Projects/Meridia-BE/MeridiaService/MeridiaService/bin/Debug/net7.0/nlog.config

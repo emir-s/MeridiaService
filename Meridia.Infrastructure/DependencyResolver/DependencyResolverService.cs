@@ -1,8 +1,6 @@
 ﻿using System;
-using Meridia.Application.Core.Repositories;
-using Meridia.Application.Core.Services;
-using Meridia.Infrastructure.Data;
-using Meridia.Infrastructure.Repositories;
+using Meridia.Application.Interfaces.Repositories;
+using Meridia.Application.Interfaces.Services;
 using Meridia.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -13,25 +11,10 @@ namespace Meridia.Infrastructure.DependencyResolver
 {
     public static class DependencyResolverService
     {
-        public static void Register(IServiceCollection services, IConfiguration Configuration)
+        public static void Register(IServiceCollection services)
         {
-            services.AddDbContext<MeridiaDbContext>(options =>
-                options.UseSqlServer(
-                    "name=ConnectionStrings:MeridiaDatabase",
-                    x => x.MigrationsAssembly("Meridia.DbMigrations")));
-
-            services.AddScoped(typeof(IBaseRepositoryAsync<>), typeof(BaseRepositoryAsync<>));
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ILoggerService, LoggerService>();
-        }
-
-        public static void MigrateDatabase(IServiceProvider serviceProvider)
-        {
-            var dbContextOptions = serviceProvider.GetRequiredService<DbContextOptions<MeridiaDbContext>>();
-            using (var dbContext = new MeridiaDbContext(dbContextOptions))
-            {
-                dbContext.Database.Migrate();
-            }
+            services.AddScoped<ICryptService, CryptService>();
         }
     }
 }

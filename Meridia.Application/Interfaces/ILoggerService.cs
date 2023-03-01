@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Meridia.Application.Core.Services
+namespace Meridia.Application.Interfaces.Services
 {
 	public interface ILoggerService
 	{

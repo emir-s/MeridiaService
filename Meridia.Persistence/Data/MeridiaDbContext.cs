@@ -6,7 +6,7 @@ using Meridia.Domain.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 
 
-namespace Meridia.Infrastructure.Data
+namespace Meridia.Persistence.Data
 {
     public class MeridiaDbContext : DbContext
     {
@@ -18,6 +18,8 @@ namespace Meridia.Infrastructure.Data
         public DbSet<City> City { get; set; }
         public DbSet<District> District { get; set; }
         public DbSet<Address> Address { get; set; }
+        public DbSet<Country> Country { get; set; }
+        public DbSet<UserLocations> UserLocations { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<City>()
@@ -30,6 +32,23 @@ namespace Meridia.Infrastructure.Data
                 .WithOne(o => o.District)
                 .HasForeignKey(o => o.DistrictID);
             
+            modelBuilder.Entity<Country>()
+                .HasMany(c => c.Cities)
+                .WithOne(o => o.Country)
+                .HasForeignKey(o => o.CountryID);
+
+            modelBuilder.Entity<UserLocations>()
+                .HasKey(ul => new { ul.UserID, ul.AddressID });
+
+            modelBuilder.Entity<UserLocations>()
+                .HasOne(ul => ul.User)
+                .WithMany(u => u.UserLocations)
+                .HasForeignKey(ul => ul.UserID);
+
+            modelBuilder.Entity<UserLocations>()
+                .HasOne(ul => ul.Address)
+                .WithMany(u => u.UserLocations)
+                .HasForeignKey(ul => ul.AddressID);
         }
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {

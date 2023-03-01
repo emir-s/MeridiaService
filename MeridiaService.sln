@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meridia.Infrastructure", "M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meridia.Application", "Meridia.Application\Meridia.Application.csproj", "{A139E24E-B119-4E9E-8BD0-BBDE9BC9FC92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meridia.DbMigrations", "Meridia.DbMigrations\Meridia.DbMigrations.csproj", "{F43A9699-FC81-467C-BE11-04D2F2EB8A1A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meridia.Persistence", "Meridia.Persistence\Meridia.Persistence.csproj", "{4B7151B2-534F-43BD-BC5E-74B2198575FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{A139E24E-B119-4E9E-8BD0-BBDE9BC9FC92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A139E24E-B119-4E9E-8BD0-BBDE9BC9FC92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A139E24E-B119-4E9E-8BD0-BBDE9BC9FC92}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F43A9699-FC81-467C-BE11-04D2F2EB8A1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F43A9699-FC81-467C-BE11-04D2F2EB8A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F43A9699-FC81-467C-BE11-04D2F2EB8A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F43A9699-FC81-467C-BE11-04D2F2EB8A1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B7151B2-534F-43BD-BC5E-74B2198575FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B7151B2-534F-43BD-BC5E-74B2198575FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B7151B2-534F-43BD-BC5E-74B2198575FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B7151B2-534F-43BD-BC5E-74B2198575FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

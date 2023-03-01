@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Meridia.Domain.Entities.Users;
 
 namespace Meridia.Domain.Entities.Locations;
 

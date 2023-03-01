@@ -7,11 +7,10 @@ namespace Meridia.Domain.Specifications
 {
 	public static class UserSpecification
 	{
-        public static BaseSpecification<Users> GetUserByEmailAndPasswordSpec(string email, string password)
+        public static BaseSpecification<Users> GetUserByEmail(string email)
         {
-            return new BaseSpecification<Users>(x => x.Email == email && x.Password == password);
+            return new BaseSpecification<Users>(x => x.Email == email);
         }
-
     }
 }
 

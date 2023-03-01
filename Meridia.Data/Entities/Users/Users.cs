@@ -13,6 +13,7 @@ namespace Meridia.Domain.Entities.Users
         public string? Email { get; set; }
         public string? Password { get; set; }
         public string? IdentityNo { get; set; }
+        public ICollection<UserLocations> UserLocations { get; set; }
     }
 }
 

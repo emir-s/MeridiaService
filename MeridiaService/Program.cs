@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics;
-using Meridia.Infrastructure.Data;
+using Meridia.Persistence.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,7 +12,9 @@ var appSettings = new ConfigurationBuilder()
 
 // Add services to the container.
 Meridia.Application.DependencyResolver.DependencyResolverService.Register(builder.Services);
-Meridia.Infrastructure.DependencyResolver.DependencyResolverService.Register(builder.Services, appSettings);
+Meridia.Infrastructure.DependencyResolver.DependencyResolverService.Register(builder.Services);
+Meridia.Persistence.DependencyResolver.DependencyResolverService.Register(builder.Services, appSettings);
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -35,7 +37,7 @@ app.UseAuthorization();
 app.MapControllers();
 using (var scope = app.Services.CreateScope())
 {
-    Meridia.Infrastructure.DependencyResolver.DependencyResolverService.MigrateDatabase(scope.ServiceProvider);
+    Meridia.Persistence.DependencyResolver.DependencyResolverService.MigrateDatabase(scope.ServiceProvider);
 }
 
 app.Run();

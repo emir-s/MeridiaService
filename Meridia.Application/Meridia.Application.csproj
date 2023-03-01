@@ -21,11 +21,6 @@
     <None Remove="Models\Reponses\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Core\" />
-    <Folder Include="Core\Repositories\" />
-    <Folder Include="Core\Services\" />
-    <Folder Include="Services\" />
-    <Folder Include="Core\Models\" />
     <Folder Include="Interfaces\" />
     <Folder Include="DependencyResolver\" />
     <Folder Include="Models\" />

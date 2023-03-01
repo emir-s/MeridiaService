@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using Meridia.Domain.Entities.Common;
+using Meridia.Domain.Entities.Users;
 
 namespace Meridia.Domain.Entities.Locations;
 
@@ -13,4 +14,6 @@ public class Address : BaseEntity
     public string PostalCode { get; set; }
     public string Street { get; set; }
     public District District { get; set; }
+    public ICollection<UserLocations> UserLocations { get; set; }
+
 }

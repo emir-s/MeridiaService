@@ -2,7 +2,7 @@
 using Meridia.Domain.Core.Specifications;
 using Meridia.Domain.Entities.Common;
 
-namespace Meridia.Application.Core.Repositories
+namespace Meridia.Application.Interfaces.Repositories
 {
     public interface IBaseRepositoryAsync<T> where T : BaseEntity
     {

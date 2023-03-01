@@ -1,5 +1,5 @@
 ﻿using System;
-using Meridia.Application.Core.Services;
+using Meridia.Application.Interfaces.Services;
 using System.Reflection.Metadata;
 using NLog.Web;
 

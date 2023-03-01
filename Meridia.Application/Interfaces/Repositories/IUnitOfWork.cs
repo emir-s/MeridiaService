@@ -1,7 +1,7 @@
 ﻿using System;
 using Meridia.Domain.Entities.Common;
 
-namespace Meridia.Application.Core.Repositories
+namespace Meridia.Application.Interfaces.Repositories
 {
 	public interface IUnitOfWork
 	{

@@ -1,10 +1,11 @@
 using Microsoft.EntityFrameworkCore;
-using Meridia.Infrastructure.Data;
 using Meridia.Domain.Core.Specifications;
-using Meridia.Application.Core.Repositories;
+using Meridia.Application.Interfaces.Repositories;
 using Meridia.Domain.Entities.Common;
+using Meridia.Infrastructure.Repositories;
+using Meridia.Persistence.Data;
 
-namespace Meridia.Infrastructure.Repositories
+namespace Meridia.Persistence.Repositories
 {
     public class BaseRepositoryAsync<T> : IBaseRepositoryAsync<T> where T : BaseEntity
     {
