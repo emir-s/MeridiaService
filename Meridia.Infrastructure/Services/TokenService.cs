@@ -18,7 +18,7 @@ public class TokenService : ITokenService
     {
         _configuration = configuration;
     }
-    public Token CreateAccessToken(int second, Users user)
+    public Token CreateAccessToken(int minute, Users user)
     {
         Token token = new();
         
@@ -28,7 +28,7 @@ public class TokenService : ITokenService
         SigningCredentials signingCredentials = new(securityKey, SecurityAlgorithms.HmacSha256);
 
         //Oluşturulacak token ayarlarını veriyoruz.
-        token.Expiration = DateTime.UtcNow.AddSeconds(second);
+        token.Expiration = DateTime.UtcNow.AddMinutes(minute);
         JwtSecurityToken securityToken = new(
             audience: _configuration["Token:Audience"],
             issuer: _configuration["Token:Issuer"],
