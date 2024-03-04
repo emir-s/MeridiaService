@@ -18,7 +18,7 @@ namespace Meridia.Persistence.DependencyResolver
         public static void Register(IServiceCollection services, IConfiguration Configuration)
         {
             services.AddDbContext<MeridiaDbContext>(options =>
-                options.UseSqlServer(
+                options.UseNpgsql(
                     "name=ConnectionStrings:MeridiaDatabase",
                         x => x.MigrationsAssembly("Meridia.Persistence")));
 

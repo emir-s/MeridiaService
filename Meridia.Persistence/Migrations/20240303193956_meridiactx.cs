@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Meridia.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class Persistence : Migration
+    public partial class meridiactx : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,9 +15,9 @@ namespace Meridia.Persistence.Migrations
                 name: "Country",
                 columns: table => new
                 {
-                    CountryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CountryName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CountryCode = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CountryID = table.Column<Guid>(type: "uuid", nullable: false),
+                    CountryName = table.Column<string>(type: "text", nullable: false),
+                    CountryCode = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -28,16 +28,16 @@ namespace Meridia.Persistence.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Surname = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IdentityNo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedBy = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    LastUpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    UserID = table.Column<Guid>(type: "uuid", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: true),
+                    Surname = table.Column<string>(type: "text", nullable: true),
+                    Email = table.Column<string>(type: "text", nullable: true),
+                    Password = table.Column<string>(type: "text", nullable: true),
+                    IdentityNo = table.Column<string>(type: "text", nullable: true),
+                    CreatedBy = table.Column<Guid>(type: "uuid", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedBy = table.Column<Guid>(type: "uuid", nullable: false),
+                    LastUpdatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -48,10 +48,10 @@ namespace Meridia.Persistence.Migrations
                 name: "City",
                 columns: table => new
                 {
-                    CityID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CityName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CityCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CountryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    CityID = table.Column<Guid>(type: "uuid", nullable: false),
+                    CityName = table.Column<string>(type: "text", nullable: false),
+                    CityCode = table.Column<string>(type: "text", nullable: false),
+                    CountryID = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -68,10 +68,10 @@ namespace Meridia.Persistence.Migrations
                 name: "District",
                 columns: table => new
                 {
-                    DistrictID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    DistrictName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DistrictCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CityID = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    DistrictID = table.Column<Guid>(type: "uuid", nullable: false),
+                    DistrictName = table.Column<string>(type: "text", nullable: false),
+                    DistrictCode = table.Column<string>(type: "text", nullable: false),
+                    CityID = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -88,16 +88,16 @@ namespace Meridia.Persistence.Migrations
                 name: "Address",
                 columns: table => new
                 {
-                    AddressID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    AddressName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DistrictID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    PostalCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Street = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CreatedBy = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedBy = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    LastUpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    AddressID = table.Column<Guid>(type: "uuid", nullable: false),
+                    AddressName = table.Column<string>(type: "text", nullable: false),
+                    Description = table.Column<string>(type: "text", nullable: false),
+                    DistrictID = table.Column<Guid>(type: "uuid", nullable: false),
+                    PostalCode = table.Column<string>(type: "text", nullable: false),
+                    Street = table.Column<string>(type: "text", nullable: false),
+                    CreatedBy = table.Column<Guid>(type: "uuid", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedBy = table.Column<Guid>(type: "uuid", nullable: false),
+                    LastUpdatedDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -114,12 +114,12 @@ namespace Meridia.Persistence.Migrations
                 name: "UserLocations",
                 columns: table => new
                 {
-                    UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    AddressID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UserLocationsID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    LocationName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsActive = table.Column<int>(type: "int", nullable: false),
-                    IsPrimary = table.Column<int>(type: "int", nullable: false)
+                    UserID = table.Column<Guid>(type: "uuid", nullable: false),
+                    AddressID = table.Column<Guid>(type: "uuid", nullable: false),
+                    UserLocationsID = table.Column<Guid>(type: "uuid", nullable: false),
+                    LocationName = table.Column<string>(type: "text", nullable: false),
+                    IsActive = table.Column<int>(type: "integer", nullable: false),
+                    IsPrimary = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {

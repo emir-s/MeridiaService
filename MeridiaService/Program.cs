@@ -70,6 +70,8 @@ app.UseAuthorization();
 app.UseCors(MyAllowSpecificOrigins);
 app.MapControllers();
 
+
+
 using (var scope = app.Services.CreateScope())
 {
     Meridia.Persistence.DependencyResolver.DependencyResolverService.MigrateDatabase(scope.ServiceProvider);
